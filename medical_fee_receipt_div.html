@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    body {
+      width: 1118px;
+      height: 1280px;
+      background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./after.jpg) no-repeat;
+      text-align: center;
+      margin: 8px 0;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 16px;
+      letter-spacing: 1px;
+    }
+
+    .grid {
+      margin: 15px 2px;
+      width: 1110px;
+      height: 1240px;
+      border: 2px solid;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .patient {
+      display: grid;
+      grid-template-columns: 21% 27% 35% 17%;
+    }
+
+    .treatment {
+      display: grid;
+      grid-template-columns: 21% 27% 12% 16% 24%;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: 4% 8% 9% 9% 9% 7% 15.5% 36.5% 2%;
+    }
+
+    .details .item {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .patient div, .treatment div, .details div {
+      min-height: 25px;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+<div class="title">
+  [&nbsp;&nbsp;]외래 [&nbsp;&nbsp;]입원 ([&nbsp;&nbsp;]퇴원[&nbsp;&nbsp;]중간) 진료비 계산서ᆞ영수증
+</div>
+<div class="grid">
+  <div class="patient">
+    <div>환자등록번호</div>
+    <div>환자 성명</div>
+    <div>진료기간</div>
+    <div>야간(공휴일)진료</div>
+    <div></div>
+    <div></div>
+    <div>. . .부터 . . .까지</div>
+    <div>[ ] 야간 [ ] 공휴일</div>
+  </div>
+  <div class="treatment">
+    <div>진료과목</div>
+    <div>질병군(DRG)번호</div>
+    <div>병실</div>
+    <div>환자구분</div>
+    <div>영수증번호(연월-일련번호)</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="details">
+    <div class="item">항목</div>
+    <div>급여</div>
+    <div>비급여</div>
+    <div>금액산정내용</div>
+    <div>일부 본인부담</div>
+    <div>전액 본인부담</div>
+    <div>선택<br>진료료</div>
+    <div>선택 진료 외</div>
+    <div>⑦ 진료비 총액<br>(①+②+③+④+⑤)</div>
+    <div></div>
+    <div class="base-item">기본항목</div>
+    <div>진 찰 료</div>
+  </div>
+</div>
+</body>
+</html>
