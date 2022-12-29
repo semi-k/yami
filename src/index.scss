@@ -113,6 +113,10 @@ body {
 
           .classification {
             grid-row: 1/19;
+            display: flex;
+            justify-content: center;
+            align-items : center;
+            padding: 0 5px;
           }
 
           .column-2 {
