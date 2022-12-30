@@ -1,3 +1,5 @@
+$default-cell-height: 29.2px;
+
 body {
   width: 1118px;
   height: 1280px;
@@ -9,7 +11,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     line-height: 16px;
-    letter-spacing: 1px;
+    letter-spacing: 1.3px;
   }
 
   .grid {
@@ -21,8 +23,22 @@ body {
     line-height: 28px;
 
     div {
-      min-height: 29.5px;
+      min-height: $default-cell-height;
+      line-height: 24px;
       box-sizing: border-box;
+
+      span {
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .left-align-text {
+      text-align: left;
+      justify-content: flex-start;
     }
 
     .patient {
@@ -53,7 +69,7 @@ body {
       }
     }
 
-    .details {
+    .details-bill {
       display: grid;
       grid-template-columns: 63.3% 36.7%;
       line-height: normal;
@@ -113,10 +129,8 @@ body {
 
           .classification {
             grid-row: 1/19;
-            display: flex;
-            justify-content: center;
-            align-items : center;
-            padding: 0 5px;
+            padding-left: 15px;
+            line-height: 19px;
           }
 
           .column-2 {
@@ -165,10 +179,37 @@ body {
 
         .optional-items {
           display: grid;
-          grid-template-columns: 6% 27% 12% 19% 13% 10% 13%;
+          grid-template-columns: 6.2% 27% 15% 15.4% 12.8% 9.7% 13.9%;
+
+          div {
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+          }
 
           .classification {
+            grid-row: 1/6;
+            padding: 0 6px;
+            line-height: 19px;
+          }
+        }
 
+        .etc-items {
+          display: grid;
+          grid-template-columns: 33.1% 15.1% 15.2% 13% 9.7% 13.9%;
+
+          div {
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+
+            &:first-child {
+              padding: 2px 0;
+            }
+
+            span.left-align-text {
+              position: relative;
+              left: 4px;
+              bottom: 2px;
+            }
           }
         }
       }
@@ -183,7 +224,7 @@ body {
           border-right: 1px solid;
 
           &:nth-child(odd) {
-            border-right: none;
+            //border-right: none;
           }
         }
 
@@ -194,17 +235,99 @@ body {
 
         .right-bill-title-1 {
           grid-column: 1/2;
-          //grid-row: 6/11;
+          grid-row: 6/10
         }
 
         .right-bill-title-2 {
           grid-column: 1/3;
-          height: 58px;
+          height: 59px;
 
           &.patient-bill {
             height: 116px;
           }
+
+          &.default-height {
+            height: $default-cell-height;
+          }
         }
+
+        .right-bill-title-3 {
+          grid-column: 1/4;
+        }
+
+        .etc {
+          border: none;
+          padding: 5px;
+        }
+      }
+    }
+
+    .bottom-bill {
+      display: grid;
+      grid-template-columns: 21% 9.5% 18.6% 4.8% 9.4% 10.5% 5.6% 0.8% 9% 11%;
+      border-top: 1px solid;
+      position: relative;
+      top: -1px;
+
+      div {
+        border-bottom: 1px solid;
+        border-right: 1px solid;
+
+        span.left-align-text {
+          position: relative;
+          left: 4px;
+          bottom: 2px;
+        }
+      }
+
+      .empty {
+        grid-column: 3/6;
+      }
+
+      .option-label {
+        grid-column: 6/9;
+      }
+
+      .option-value {
+        grid-column: 9/11;
+      }
+
+      .hospital-value {
+        grid-column: 2/11;
+      }
+
+      .business-number-value {
+        grid-column: 2/4;
+      }
+
+      .company-name-value {
+        grid-column: 5/7;
+      }
+
+      .phone-number-label {
+        grid-column: 7/10;
+      }
+
+      .company-address-value {
+        grid-column: 2/6;
+      }
+
+      .ceo-label {
+        grid-column: 6/8;
+      }
+
+      .ceo-value {
+        grid-column: 8/11;
+
+        span {
+          justify-content: flex-end;
+          padding-right: 40px;
+          box-sizing: border-box;
+        }
+      }
+
+      .date {
+        grid-column: 1/11;
       }
     }
   }
